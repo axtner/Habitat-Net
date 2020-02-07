@@ -17,6 +17,7 @@ from IPython.core.debugger import set_trace
 import random
 
 ## augmentation functions
+## to increase the number of images for training the network the images used for training are flipped and mirrored
 def augment_data_ltrb(imgs_train):
     rotation_angles = [0,90,180,270]
     aug_img_train = np.zeros((np.shape(imgs_train)[0]*4,np.shape(imgs_train)[1],np.shape(imgs_train)[2],np.shape(imgs_train)[3]))
