@@ -17,7 +17,7 @@ from IPython.core.debugger import set_trace
 import random
 
 ## augmentation functions
-## to increase the number of images for training the network the images used for training are flipped and mirrored
+# to increase the number of images for training the network the images used for training are flipped and mirrored
 def augment_data_ltrb(imgs_train):
     rotation_angles = [0,90,180,270]
     aug_img_train = np.zeros((np.shape(imgs_train)[0]*4,np.shape(imgs_train)[1],np.shape(imgs_train)[2],np.shape(imgs_train)[3]))
@@ -52,16 +52,19 @@ def split_data(imgs_train, train_split):
     rand_val = np.setdiff1d(total_train, rand_train)
     return rand_train,rand_val
 
+# don't know what the folling line 56 was for nor why it was deactivated
 #K.set_image_dim_ordering('th')  # Theano dimension ordering in this code
 
-# data_path = 'IZW_RGB/'
-#data_path = 'D:/KID/'
+
 n_ch = 3
 bn=True
 test_only=True
 use_salient_images = True
+# path to store results of the augmentation
 results_home = 'D:/RGB-NET/set1c/'
+# path to store salient images
 salient_image_home = 'D:/RGB-NET/set1c'
+# path to get the original images used for training the network
 data_path = 'D:/RGB-NET/set1c/'
 #Image Dimensions
 image_rows = 128
